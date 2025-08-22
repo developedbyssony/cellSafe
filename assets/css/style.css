@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=The+Nautigal:wght@400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+.sound-only {
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    left: -999px;
+    text-indent: -999px;
+}
+
+* {
+    font-family: Pretendard, 'Noto Sans KR', sans-serif;
+}
+
+html,
+body {
+    max-width: 100%;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* header */
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    height: 0px;
+    background-color: white;
+    width: 100%;
+    z-index: -1;
+}
+
+.inner {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+header>.inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 8px 20px;
+}
+
+header .logo {
+    width: 124px;
+    padding: 5px 0 0;
+}
+
+header.index .logo i {
+    content: url('../img/logo-white.svg');
+    width: 100%;
+}
+
+header .gnb-menu .depth01 {
+    display: none;
+}
+
+header .lang {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border: none;
+    background-color: inherit;
+    font-size: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+header .search-header,
+header .lang {
+    z-index: 700;
+    color: white;
+}
+
+header .lang::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ddd;
+    right: -16px;
+    top: 4px;
+}
+
+header .lang::after {
+    content: url('../img/lang-more-white-ico.svg');
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+header .lang-btn {
+    position: relative;
+    width: 38px;
+    margin-right: 30px;
+}
+
+header .lang-btn .lang i {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: url("../img/ico-lang.svg");
+    filter: invert(1);
+}
+
+header .lang-menu {
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+header .lang-menu li {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header .lang-menu li:first-of-type {
+    border-bottom: 1px solid #ddd;
+}
+
+header .lang-menu li a {
+    padding: 10px 20px;
+}
+
+header .util {
+    display: flex;
+    height: 44px;
+}
+
+header.index .search-header .search {
+    filter: invert(1);
+}
+
+header .util-menu {
+    display: flex;
+    width: max-content;
+    height: 44px;
+}
+
+header .util-menu>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.sitemap .logo {
+    padding: 0;
+}
+
+header.sitemap .logo a {
+    position: fixed;
+    z-index: 700;
+    width: 124px;
+}
+
+
+header.sitemap .logo i {
+    content: url('../img/logo-white.svg');
+}
+
+header .sitemap-menu.on {
+    display: block;
+}
+
+header .sitemap-menu .priv {
+    display: none;
+}
+
+header .sitemap-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #262629;
+    z-index: 500;
+    display: none;
+}
+
+header .sitemap-menu.on {
+    display: block;
+}
+
+header .sitemap-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0px;
+    margin-top: 60px;
+}
+
+header .sitemap-list>li.on>a {
+    background-color: #E85A1C;
+    color: white;
+    padding: 13px 20px 13px 10px;
+    border-radius: 5px;
+    width: 90px;
+    z-index: 210;
+    font-weight: bold;
+}
+
+header .sitemap-list::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: #f5f5f5f8;
+    width: 115px;
+    height: 100vh;
+    z-index: -1;
+}
+
+header .sitemap-list::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+header.sitemap .sitemap-btn>a i {
+    background: url("../img/ico-close.svg");
+    filter: invert(0);
+}
+
+header .sitemap-list>li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .sitemap-list>li:first-of-type>a {
+    margin-top: 10px;
+}
+
+header .sitemap-list>li>a {
+    color: black;
+    width: 115px;
+    font-size: 16px;
+    padding: 13px 20px 13px 10px;
+    font-weight: bold;
+    position: relative;
+    height: fit-content;
+}
+
+header .sitemap-depth02 {
+    position: absolute;
+    left: 115px;
+    top: 0;
+    display: none;
+}
+
+header li.on .sitemap-depth02 {
+    display: flex;
+    position: absolute;
+    width: calc(100% - 115px);
+    padding-top:10px;
+    flex-direction: column;
+    left: 115px;
+    top: 0;
+    padding-top: 10px;
+}
+
+header li .on .sitemap-depth02>li {
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+}
+
+header .sitemap-depth02>li>a.more::after {
+    position: absolute;
+    right: 0px;
+    content: url('../img/gnb-mob-gray-ico.svg');
+}
+
+header .sitemap-depth02>li>a {
+    display: block;
+    position: relative;
+    padding: 15px 0px;
+    width: clac(100% - 40px);
+    margin: 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header .sitemap-depth03 li:last-child>a {
+    margin-bottom: 0px !important;
+    padding: 0;
+}
+
+header li.on>.sitemap-depth02 {
+    display: flex;
+}
+
+header .sitemap-depth03 {
+    background-color: #f5f5f8;
+    padding: 15px;
+    margin: 0 20px;
+    height: auto;
+}
+
+header .sitemap-depth03 li a {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+header .search-header>button {
+    background-color: transparent;
+    border: 0;
+}
+
+header .search-header .search {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: url("../img/ico-search.svg");
+    filter: invert(1);
+}
+
+header .sitemap-btn {
+    position: relative;
+    margin-left: 15px;
+    width: 42px;
+    height: 42px;
+}
+
+header .sitemap-btn>a {
+    position: absolute;
+    top: 0;
+    z-index: 505;
+}
+
+header .sitemap-btn i {
+    display: block;
+    background: transparent url("../img/ico-sitemap-btn.svg");
+    filter: invert(1);
+    width: 42px;
+    height: 42px;
+}
+
+header .sitemap-title {
+    display: none;
+}
+
+header .sitemap-list {
+    position: relative;
+    margin-top: 60px;
+}
+
+/* footer */
+footer {
+    padding: 25px 20px;
+    background-color: #262629;
+}
+
+footer .contact-menu {
+    margin: 20px 0;
+}
+
+footer .contact-menu li {
+    width: calc((100% - 10px) / 2);
+}
+
+footer .contact-menu li a {
+    width: 100%;
+}
+
+footer p {
+    color: white;
+}
+
+footer .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    gap: 30px;
+    width: 100%;
+}
+
+footer .footer-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+footer .footer-title .bold {
+    font-weight: 800;
+}
+
+footer .footer-title .orange {
+    color: #E85A1C;
+}
+
+footer .contact-menu {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+footer .contact-menu li a {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 1px solid white;
+    font-weight: 600;
+}
+
+footer .address {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+footer .cate {
+    color: white;
+    font-weight: 400;
+    margin-right: 10px;
+    opacity: 0.6;
+    font-size: 16px;
+}
+
+footer .copy {
+    margin-top: 20px;
+    opacity: 0.6;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+footer .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    gap: 30px;
+}
+
+footer .footer-title {
+    gap: 15px;
+}
+
+footer .footer-menu a {
+    padding-right: 15px;
+}
+
+footer .footer-menu a::after {
+    content: url("../img/footer-menu-ico.svg");
+    transition: 0.5s;
+    padding-left: 3px;
+}
+
+footer .footer-menu a:hover::after {
+    transform: translateX(2px);
+    transform: translateY(-2px);
+}
+
+footer .footer-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+footer .etc-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+footer .etc-menu li a.bold {
+    font-weight: bold;
+}
+
+@media screen and (min-width:1200px) {
+    .inner {
+        max-width: 1600px;
+        box-sizing: border-box;
+    }
+
+    header>.inner {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    header.index>.inner::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: calc(100%-100px);
+        left: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+
+    header .gnb-menu .depth01 {
+        display: flex;
+        text-align: center;
+    }
+
+    header::before {
+        content: '';
+        width: 100%;
+        background-color: #fcfcfc;
+        position: absolute;
+        top: 0px;
+        z-index: -2;
+    }
+
+    header.on::before {
+        height: 100%;
+        transition: 0s;
+    }
+
+    header::after {
+        content: '';
+        width: 100%;
+        height: 0px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: 0s;
+    }
+
+    header.on::after {
+        height: 100px;
+        transition: 0s;
+        border-bottom: 1px solid #ddd;
+    }
+
+    header.index.on .logo i {
+        content: url('../img/logo.svg');
+    }
+
+    header .depth01>li {
+        width: 130px;
+    }
+
+    header.on .depth01>li {
+        position: relative;
+        width: 200px;
+        text-align: center;
+        transition: width .5s;
+    }
+
+    header .depth01>li>a {
+        display: block;
+        font-weight: 600;
+        width: 100%;
+        height: 100px;
+        padding: 35px 0;
+        position: relative;
+        border: border-box;
+    }
+
+
+    header.on .depth01>li>a::after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(0.25turn, #F7C800, #F5B300, #F19B0D, #E61F1F);
+        z-index: 50;
+        transform: scale(0);
+        transition: .5s;
+    }
+
+    header.index.on .depth01 li.on {
+        background-color: white;
+        z-index: 1;
+    }
+
+    header .depth01>li::before {
+        height: calc(100% - 100px);
+        position: absolute;
+        content: '';
+        background-color: #dddddd;
+        right: 0;
+        top: 100px;
+        width: 1px;
+    }
+
+    header .depth01>li:hover>a::after {
+        transform: scale(1);
+    }
+
+    header .depth01>li::before {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 0;
+        height: calc(100% - 100px);
+        background-color: #ddd;
+        z-index: 1;
+    }
+
+    header .depth01>li>a {
+        color: white;
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+    }
+
+    header.index.on .depth01>li>a {
+        color: black;
+    }
+
+    header .depth01>li:hover>a,
+    header.index .depth01>li:hover>a {
+        color: #E85A1C;
+    }
+
+    header .depth02 {
+        display: block;
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        padding-top: 20px;
+        z-index: 4;
+    }
+
+    header .depth02>li>a {
+        display: inline-block;
+        position: relative;
+        padding: 10px 0px 10px 0px;
+        font-size: 16px;
+    }
+
+    header .depth02>li>a.more {
+        position: relative;
+        padding: 10px 18px 10px 0;
+    }
+
+    header .depth03 {
+        display: none;
+    }
+
+    header .depth03 li {
+        margin-bottom: 10px;
+    }
+
+    header .depth02>li>a.more::after {
+        content: url('../img/gnb-more-gray-ico.svg');
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+
+    header .depth02>li.active>a,
+    header .depth02>li.on>a,
+    header .depth02>li:hover>a {
+        color: black;
+        font-weight: 500;
+    }
+
+    header.index.on .sitemap-btn>a i,
+    header.index.active .sitemap-btn>a i,
+    header.index.on .search-header .search {
+        filter: invert(0);
+    }
+
+    header .index>.inner::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: calc(100%-100px);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    header.index.on .lang::after {
+        content: url('../img/lang-more-ico.svg');
+    }
+
+    header .depth01>li>a {
+        height: 100px;
+        font-size: 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header li.on .sitemap-depth02 {
+        position: relative;
+        flex-direction: row;
+        left: 0;
+    }
+
+    header .gnb-menu .depth01 {
+        display: flex;
+    }
+
+    header .util-menu {
+        display: flex;
+        width: 210px;
+        height: 44px;
+        margin: 28px 0;
+    }
+
+    header .logo {
+        width: 150px;
+        padding: 25px 0;
+        z-index: 2;
+    }
+
+
+    header .lang-btn {
+        width: 80px;
+        margin-right: 30px;
+    }
+
+    header .depth02 {
+        display: none;
+    }
+
+    header .depth01>li>a {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100px;
+        padding: 35px 0;
+        z-index: 3;
+    }
+
+    header .lang {
+        font-size: 19px;
+    }
+
+    header .lang::after {
+        top: 9px;
+    }
+
+    header.index.on .lang {
+        color: black;
+    }
+
+    header.index.on .lang i {
+        filter: invert(0);
+    }
+
+    header .search-header .search {
+        filter: invert(0);
+    }
+
+    header .sitemap-list::before {
+        display: none;
+    }
+
+
+    header .sitemap-list::after {
+        display: none;
+    }
+
+    header .sitemap-list>li.on>a {
+        background: none;
+        position: relative;
+    }
+
+    footer {
+        padding-top: 100px;
+    }
+
+    footer .inner {
+        flex-direction: row;
+    }
+
+    footer .footer-menu {
+        flex-direction: column;
+    }
+
+    header .sitemap-title {
+        display: block;
+        font-size: 42px;
+        color: white;
+        padding-top: 34px;
+        font-weight: bold;
+    }
+
+    header .sitemap-list .inner {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 60px;
+        gap: 40px;
+    }
+
+    header .sitemap-list>li {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header .sitemap-list>li>a {
+        width: 7%;
+        color: white;
+        z-index: 100;
+    }
+
+    header li .sitemap-depth02 {
+        display: flex;
+        position: relative;
+        width: calc(100% - 13%);
+    }
+
+    header .sitemap-depth02 {
+        display: flex;
+        width: calc(100% - 13%);
+        left: 0;
+    }
+
+    header .sitemap-depth02>li {
+        width: calc(19% - 1em);
+        padding-left: 1em;
+    }
+
+    header .sitemap-depth02>li>a {
+        font-size: 16px;
+        color: white;
+        font-weight: 500;
+        border-bottom: none;
+    }
+
+    header .sitemap-list>li:first-of-type .sitemap-depth03 {
+        height: 140px;
+    }
+
+    header .sitemap-depth03 {
+        margin-top: 15px;
+        padding: 0 24px;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        background: none;
+    }
+
+    header .sitemap-depth03 li {
+        opacity: 0.6;
+        position: relative;
+        color: white;
+    }
+
+    header .sitemap-btn .active {
+        position: absolute;
+        top: 0;
+        z-index: 505;
+    }
+
+    header .sitemap-btn .active i {
+        background: url('../img/ico-close.svg');
+        filter: invert(0);
+    }
+
+}
